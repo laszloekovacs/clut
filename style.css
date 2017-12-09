@@ -1,0 +1,24 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+li:hover {
+    background-color: #89f442;   
+}
+
+div.box {
+   display: inline-block;
+   background-color: #dcff75;
+}
+
