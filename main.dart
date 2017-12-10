@@ -1,14 +1,26 @@
 import 'dart:core';
 import 'dart:io';
+import 'dart:async';
 
 
-void maintainednolonger(dynamic) {
-  return;
+
+dynamic serve(int port) async {
+  try {
+    var server = await HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, port);
+
+    await for (HttpRequest request in server) {
+      print("requested url: ${request.requestedUri.path}");
+
+      var f = await new File("content${request.requestedUri.path}").readAsString();
+      request.response.headers.contentType = new ContentType("text", "html");
+      request.response.write(f);
+      request.response.close();
+    }
+  } catch (e) {
+    print("exception raised");
+  }
 }
 
-void main () {
-
-  var v = Platform.numberOfProcessors;
-
-  print('number of cpus:' + v.toString());
+void main() {
+  serve(9090);
 }
