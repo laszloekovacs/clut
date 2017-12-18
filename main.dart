@@ -11,9 +11,11 @@ dynamic serve(int port) async {
     await for (HttpRequest request in server) {
       print("requested url: ${request.requestedUri.path}");
 
-      var f = await new File("content${request.requestedUri.path}").readAsString();
+      File f = await new File("content${request.requestedUri.path}");
+
+      request.uri.path.startsWith("//");
       request.response.headers.contentType = new ContentType("text", "html");
-      request.response.write(f);
+      request.response.write(f.readAsStringSync());
       request.response.close();
     }
   } catch (e) {

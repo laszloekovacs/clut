@@ -1,6 +1,6 @@
 # Cli launch configuration for main.dart.
 type: cli
-path: main.dart
+path: route.dart
 
 cli:
   # Additional args for the application.
