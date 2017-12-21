@@ -1,8 +1,5 @@
 import 'dart:core';
 import 'dart:io';
-import 'dart:async';
-
-
 
 dynamic serve(int port) async {
   try {
@@ -15,8 +12,11 @@ dynamic serve(int port) async {
 
       request.uri.path.startsWith("//");
       request.response.headers.contentType = new ContentType("text", "html");
-      request.response.write(f.readAsStringSync());
-      request.response.close();
+
+      request.response
+        ..write(f.readAsStringSync())
+        ..flush()
+        ..close();
     }
   } catch (e) {
     print("exception raised");
