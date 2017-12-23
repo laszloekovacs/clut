@@ -4,32 +4,33 @@
 
 
 class Person:
-    __name = ''
-    __email = ''
+    'a person'
+    personname = ''
+    email = ''
 
     def __init__(self, name, email):
-        self.__name = name
-        self.__email = email
+        self.personname = name
+        self.email = email
 
     def set_name(self, name):
-        self.__name = name
+        self.personname = name
 
     def set_email(self, mail):
-        self.__email = mail
+        self.email = mail
 
     def get_name(self):
-        return self.__name
+        return self.personname
 
     def get_email(self):
-        return self.__email
+        return self.email
 
-    def toString(self):
-        return '{} can be reached at {}'.format(self.__name, self.__email)
+    def info(self):
+        return '{} can be reached at {}'.format(self.personname, self.email)
 
 
 brad = Person('brad', 'brad@mail.com')
 brad.set_name('mike')
-print(brad.toString())
+print(brad.info())
 
 
 # inheritance
@@ -38,15 +39,14 @@ class Customer(Person):
     balance = 0
 
     def __init__(self, name, email, balance):
-        self.__name = name
-        self.__email = email
+        super().__init__(name, email)
         self.balance = balance
 
     def get_balance(self):
         return self.balance
 
-    def toString(self):
-        print('{} has a balance of {}'.format(self.__name, self.balance))
+    def status(self):
+        print(self.personname, ' has a balance of', self.balance)
 
     def set_balance(self, bal):
         self.balance = bal
@@ -55,4 +55,4 @@ class Customer(Person):
 # playing with the customers
 kate = Customer('kate', 'kate@mail.com', 400)
 
-print(kate.toString())
+print(kate.status())
