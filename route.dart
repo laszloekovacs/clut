@@ -2,17 +2,14 @@ import 'dart:core';
 import 'dart:async';
 import 'dart:io';
 
-
 Stream<int> getthings() async* {
-
-  while(true) {
+  while (true) {
     sleep(new Duration(seconds: 1));
     yield 66;
   }
 }
 
 Future main() async {
-
   Stopwatch perf = new Stopwatch();
   perf.start();
   Stream m = getthings().asBroadcastStream();
@@ -27,6 +24,4 @@ Future main() async {
   m.listen((data) {
     print("also listening: ${data}");
   });
-
-
 }
