@@ -35,7 +35,7 @@ print(type(alist))
 print(type(adictionary))
 
 # concat strings
-myvariable += 'frends'
+myvariable += ' frends'
 print(myvariable)
 
 # conditionals: indents matter
@@ -74,12 +74,15 @@ for person in people:
 for i in range(0, 3):
     print(people[i])
 
+#remove i from scope
+del i
+
 # while
 count = 7
 
 while count >= 0:
     print("counter is", count)
-    count -= 1
+    count -= count
 
 # function
 # note: parameters are passed as a copy (immutable)
@@ -115,7 +118,6 @@ addToList(mylist)
 print(mylist)
 
 #string methods
-
 name = 'Hello world'
 
 print('capitalize', name.capitalize())
