@@ -1,4 +1,4 @@
-#module 'mymod'
+# module 'mymod'
 
 print("hello world")
 
@@ -20,7 +20,8 @@ print(r'c:\butt\n')
 
 # variable
 myvariable = "Hello mike"
-myvariable = "Hello everyone"  # overwrite
+# overwrite
+myvariable = "Hello everyone"
 
 myInt = 34
 myFloat = 56.6
@@ -65,7 +66,6 @@ if color == 'red' and x == 6:
     print('color is red and x is 6')
 
 # looping
-
 people = ['mike', 'bob', 'steve', 'carl']
 
 for person in people:
@@ -74,7 +74,7 @@ for person in people:
 for i in range(0, 3):
     print(people[i])
 
-#remove i from scope
+# remove i from scope
 del i
 
 # while
@@ -117,24 +117,24 @@ addToList(mylist)
 
 print(mylist)
 
-#string methods
+# string methods
 name = 'Hello world'
 
 print('capitalize', name.capitalize())
 print('swapcase', name.swapcase())
 print(len(name))
-#count characters
+# count characters
 print(name.count('l'))
 
 print(name.startswith('Hello'))
-#split
+# split
 print(name.split(' '))
 
-#seach
+# seach
 print(name.find('wo'))
 
-#index error if not found
+# index error if not found
 print(name.index('H'))
 
-#is it alphabetic, alphanumeric
+# is it alphabetic, alphanumeric
 print(name.isalpha())
