@@ -39,6 +39,7 @@ class Customer(Person):
     balance = 0
 
     def __init__(self, name, email, balance):
+        #make sure you call the constructor of the parent properly
         super().__init__(name, email)
         self.balance = balance
 
